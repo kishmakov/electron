@@ -12,6 +12,7 @@
 #include "base/logging.h"
 #include "base/no_destructor.h"
 #include "content/browser/service_worker/service_worker_context_wrapper.h"  // nogncheck
+#include "content/browser/service_worker/service_worker_info.h"     // nogncheck
 #include "content/browser/service_worker/service_worker_version.h"  // nogncheck
 #include "electron/shell/common/api/api.mojom.h"
 #include "gin/handle.h"
@@ -283,6 +284,14 @@ GURL ServiceWorkerMain::ScopeURL() const {
   return version_info()->scope;
 }
 
+GURL ServiceWorkerMain::ScriptURL() const {
+  if (version_destroyed_)
+    return GURL::EmptyGURL();
+  auto* swv_info =
+      static_cast<const content::ServiceWorkerVersionInfo*>(version_info());
+  return swv_info->script_url;
+}
+
 // static
 gin::Handle<ServiceWorkerMain> ServiceWorkerMain::New(v8::Isolate* isolate) {
   return gin::Handle<ServiceWorkerMain>();
@@ -331,6 +340,7 @@ void ServiceWorkerMain::FillObjectTemplate(
                  &ServiceWorkerMain::CountExternalRequestsForTest)
       .SetProperty("versionId", &ServiceWorkerMain::VersionID)
       .SetProperty("scope", &ServiceWorkerMain::ScopeURL)
+      .SetProperty("scriptURL", &ServiceWorkerMain::ScriptURL)
       .Build();
 }
 
