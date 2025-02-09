@@ -35,7 +35,7 @@ system font by checking if it's kCTFontPriorityAttribute is set to
 system priority.
 
 diff --git a/base/BUILD.gn b/base/BUILD.gn
-index 05ba2110698b69af677ad1fe898ae6e5953c7af4..7bcbb8f647faea889e295d8919f67745a7f72136 100644
+index 900facbe10cb181508c2283fcc11060b4a5f603e..3ace62794e04a0fbdaa7967d0d8349358dafc93b 100644
 --- a/base/BUILD.gn
 +++ b/base/BUILD.gn
 @@ -1027,6 +1027,7 @@ component("base") {
@@ -474,10 +474,10 @@ index 36c522793dc37f7c72f7cccde50895927b5560cb..689351b5a6e6e6013b808c1b4924b884
    // Beware: This view was briefly removed (in favor of a bare CALayer) in
    // https://crrev.com/c/1236675. The ordering of unassociated layers relative
 diff --git a/components/viz/service/BUILD.gn b/components/viz/service/BUILD.gn
-index 3f1b98692d11116f965fe0eb7e4b6cae308a4f19..6ac941799bda10ce7f93612691a438018160a9dd 100644
+index 6e7ea90385f34b233a0c7beb6647f539ad976169..51fd7f87f0d8b07b1b7f531ff0033976d9327e53 100644
 --- a/components/viz/service/BUILD.gn
 +++ b/components/viz/service/BUILD.gn
-@@ -378,6 +378,7 @@ viz_component("service") {
+@@ -370,6 +370,7 @@ viz_component("service") {
          "frame_sinks/external_begin_frame_source_mac.h",
        ]
      }
@@ -485,7 +485,7 @@ index 3f1b98692d11116f965fe0eb7e4b6cae308a4f19..6ac941799bda10ce7f93612691a43801
    }
  
    if (is_android || use_ozone) {
-@@ -678,6 +679,7 @@ viz_source_set("unit_tests") {
+@@ -670,6 +671,7 @@ viz_source_set("unit_tests") {
        "display_embedder/software_output_device_mac_unittest.mm",
      ]
      frameworks = [ "IOSurface.framework" ]
@@ -579,7 +579,7 @@ index a76028eed0249244d0559de102a756e3b2771b63..cb65efb56849d57e2e656f90d5b1d737
    return kAttributes;
  }
 diff --git a/content/browser/BUILD.gn b/content/browser/BUILD.gn
-index e5ca8881f7e05fc3c600cf6f785a2070efff2e5d..ce57b1e635f26ef248fbf8285cf69fe3c6c41105 100644
+index 727b91ee5a956142f6baea98e2421da1bcaf2af7..e875ca909bc2ceb6dd99678b4516af2138a5ca4b 100644
 --- a/content/browser/BUILD.gn
 +++ b/content/browser/BUILD.gn
 @@ -330,6 +330,7 @@ source_set("browser") {
@@ -792,7 +792,7 @@ index a1068589ad844518038ee7bc15a3de9bc5cba525..1ff781c49f086ec8015c7d3c44567dbe
  
  }  // namespace content
 diff --git a/content/test/BUILD.gn b/content/test/BUILD.gn
-index 190b593519ab8ccfc6309b40947c6e42ff8c6131..ec3dd70e677d7215df1c2cb504faa62ac1e6dff4 100644
+index b703520ad916428f73272fba8e435d0e0107434a..7686163233e8c7956d37c08a98acd862577a4bf6 100644
 --- a/content/test/BUILD.gn
 +++ b/content/test/BUILD.gn
 @@ -652,6 +652,7 @@ static_library("test_support") {
@@ -811,7 +811,7 @@ index 190b593519ab8ccfc6309b40947c6e42ff8c6131..ec3dd70e677d7215df1c2cb504faa62a
  }
  
  mojom("content_test_mojo_bindings") {
-@@ -1935,6 +1937,7 @@ test("content_browsertests") {
+@@ -1934,6 +1936,7 @@ test("content_browsertests") {
      "//ui/shell_dialogs",
      "//ui/snapshot",
      "//ui/webui:test_support",
@@ -819,7 +819,7 @@ index 190b593519ab8ccfc6309b40947c6e42ff8c6131..ec3dd70e677d7215df1c2cb504faa62a
    ]
  
    if (!(is_chromeos && target_cpu == "arm64" && current_cpu == "arm")) {
-@@ -3228,6 +3231,7 @@ test("content_unittests") {
+@@ -3227,6 +3230,7 @@ test("content_unittests") {
      "//ui/latency:test_support",
      "//ui/shell_dialogs:shell_dialogs",
      "//ui/webui:test_support",
@@ -840,10 +840,10 @@ index 8779cf7cbbe2a583fda51867eaebc627f00bd4cd..98da1587fdc8cc8358a69db2b51d3982
  
    # TODO(crbug.com/40139469): Blink test plugin must be migrated from PPAPI.
 diff --git a/device/bluetooth/BUILD.gn b/device/bluetooth/BUILD.gn
-index af32815b302dff9750a1dcd83b6e03df7d5f2dc9..7f20a6affe68057eb51d3176d7a901c85cacf2e0 100644
+index d27d7140cc55a35e6ffb65028265bcb2ae5932d1..1ea92b29c730aba1c667de83bb98ca85f2046470 100644
 --- a/device/bluetooth/BUILD.gn
 +++ b/device/bluetooth/BUILD.gn
-@@ -258,6 +258,7 @@ component("bluetooth") {
+@@ -253,6 +253,7 @@ component("bluetooth") {
        "IOKit.framework",
        "Foundation.framework",
      ]
@@ -1591,7 +1591,7 @@ index 2f7f2a8f81ec0e033cb83f82daac4835a2863cbc..21388d7de99fbb97c79eecbab658934d
  
      if (is_ios) {
 diff --git a/ui/accessibility/platform/browser_accessibility_manager_mac.mm b/ui/accessibility/platform/browser_accessibility_manager_mac.mm
-index 302e40d573b0a102019cb15c0c615f99c7765b1a..a671a0a3de1794ad9a81ddc0f01e615804a6b28b 100644
+index 444f315852deabbac971165a7de9751a1bb367e3..7aba9f251f869c64d7722558084f209bd5d27075 100644
 --- a/ui/accessibility/platform/browser_accessibility_manager_mac.mm
 +++ b/ui/accessibility/platform/browser_accessibility_manager_mac.mm
 @@ -13,6 +13,7 @@
