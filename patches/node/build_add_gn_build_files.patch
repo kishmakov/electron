@@ -21,6 +21,18 @@ index d6909b95886f4de3f0b953c2a2992f69066b7434..972955f9144aafcd3a3fe278b7aaad40
 +    cflags_c = [ "-Wdeprecated-literal-operator" ]
    }
  }
+diff --git a/deps/sqlite/unofficial.gni b/deps/sqlite/unofficial.gni
+index b26e1335eac339d8144aeceb101ad9e44a8fc0e6..9fdbc9919530e15645d0e10ce22e353b55cdd914 100644
+--- a/deps/sqlite/unofficial.gni
++++ b/deps/sqlite/unofficial.gni
+@@ -30,6 +30,7 @@ template("sqlite_gn_build") {
+     ]
+     if (is_win) {
+       cflags_c += [
++        "-fvisibility=hidden",
+         "-Wno-sign-compare",
+         "-Wno-unused-but-set-variable",
+         "-Wno-unused-function",
 diff --git a/node.gni b/node.gni
 index a2123cc6c6d21c53fafc8934203b3720393e7b11..245a43920c7baf000ba63192a84a4c3fd219be7d 100644
 --- a/node.gni
