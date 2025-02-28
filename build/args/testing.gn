@@ -6,6 +6,13 @@ is_official_build = false
 dcheck_always_on = true
 symbol_level = 1
 
+cc_wrapper="ccache"
+
+enable_builtin_spellchecker = false
+enable_electron_extensions = false
+forbid_non_component_debug_builds = false
+enable_pdf_viewer = false
+
 # This may be guarded behind is_chrome_branded alongside
 # proprietary_codecs https://webrtc-review.googlesource.com/c/src/+/36321,
 # explicitly override here to build OpenH264 encoder/FFmpeg decoder.
