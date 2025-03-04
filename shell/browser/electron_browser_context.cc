@@ -425,8 +425,8 @@ void ElectronBrowserContext::InitPrefs() {
   MediaDeviceIDSalt::RegisterPrefs(registry.get());
   ZoomLevelDelegate::RegisterPrefs(registry.get());
   PrefProxyConfigTrackerImpl::RegisterPrefs(registry.get());
-  ElectronAccessibilityUIMessageHandler::RegisterPrefs(registry.get());
 #if BUILDFLAG(ENABLE_ELECTRON_EXTENSIONS)
+  ElectronAccessibilityUIMessageHandler::RegisterPrefs(registry.get());
   if (!in_memory_)
     extensions::ExtensionPrefs::RegisterProfilePrefs(registry.get());
   extensions::PermissionsManager::RegisterProfilePrefs(registry.get());
