@@ -14,7 +14,7 @@
 #include "base/memory/weak_ptr.h"
 #include "content/public/browser/usb_chooser.h"
 #include "content/public/browser/usb_delegate.h"
-#include "services/device/public/mojom/usb_device.mojom-forward.h"
+#include "services/device/public/mojom/usb_device.mojom.h"
 #include "services/device/public/mojom/usb_enumeration_options.mojom-forward.h"
 #include "services/device/public/mojom/usb_manager.mojom-forward.h"
 #include "third_party/blink/public/mojom/usb/web_usb_service.mojom.h"
