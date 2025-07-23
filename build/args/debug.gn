@@ -1,0 +1,15 @@
+import("all.gn")
+is_debug = true
+symbol_level = 2
+
+cc_wrapper = "ccache"
+
+enable_builtin_spellchecker = false
+enable_electron_extensions = false
+forbid_non_component_debug_builds = false
+is_component_build = false
+enable_pdf_viewer = false
+# enable_pdf = false
+# enable_extensions = false
+# enable_extensions_core = false
+# enable_guest_view = false
