@@ -13,7 +13,6 @@
 #include "content/public/browser/render_frame_host.h"
 #include "content/public/browser/web_contents.h"
 #include "electron/buildflags/buildflags.h"
-#include "services/device/public/mojom/usb_enumeration_options.mojom.h"
 #include "shell/browser/electron_browser_context.h"
 #include "shell/browser/electron_permission_manager.h"
 #include "shell/browser/usb/usb_chooser_context.h"
@@ -29,6 +28,7 @@
 #include "extensions/common/constants.h"
 #include "extensions/common/extension.h"
 #include "services/device/public/mojom/usb_device.mojom.h"
+#include "services/device/public/mojom/usb_enumeration_options.mojom.h"
 #endif
 
 namespace {

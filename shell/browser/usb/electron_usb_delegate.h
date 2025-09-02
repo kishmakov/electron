@@ -14,11 +14,16 @@
 #include "base/memory/weak_ptr.h"
 #include "content/public/browser/usb_chooser.h"
 #include "content/public/browser/usb_delegate.h"
+#include "electron/buildflags/buildflags.h"
+#include "services/device/public/mojom/usb_device.mojom.h"
+#include "url/origin.h"
+
+#if BUILDFLAG(ENABLE_ELECTRON_EXTENSIONS)
 #include "services/device/public/mojom/usb_device.mojom-forward.h"
 #include "services/device/public/mojom/usb_enumeration_options.mojom-forward.h"
 #include "services/device/public/mojom/usb_manager.mojom-forward.h"
 #include "third_party/blink/public/mojom/usb/web_usb_service.mojom.h"
-#include "url/origin.h"
+#endif
 
 namespace content {
 class BrowserContext;
